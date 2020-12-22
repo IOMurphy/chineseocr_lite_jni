@@ -4,15 +4,32 @@
 
 # 目录结构
 
-- java-example
-	- example                      java调用demo
-	- ocr-jni                          jni代码
-- libs                                        已经编译好可直接使用的动态库
-- models 			       神经网络的模型文件
-- OcrLiteOnnx                        C++代码
-	- include                        头文件
-	- onnx                             onnx动态库存放位置
-	- src                                 C++调用圣经网络代码
+        ├── LICENSE  // LICENSE
+        ├── LICENSE-origin
+        ├── OcrLiteOnnx   // 动态库文件夹
+        │   ├── CMakeLists.txt 
+        │   ├── build.sh
+        │   ├── clean.sh
+        │   ├── cmake-build-debug
+        │   ├── include  // 动态库头文件
+        │   ├── onnx  // onnx依赖
+        │   │   └── ONNXConfig.cmake
+        │   ├── run-test.sh
+        │   └── src  // c++源码
+        ├── README.md
+        ├── java-example // java示例
+        │   ├── example // 调用ocr-jni的demo
+        │   │   ├── example.iml
+        │   │   ├── pom.xml
+        │   │   ├── src
+        │   │   └── target
+        │   ├── ocr-jni // jni调用的java代码
+        │   │   ├── pom.xml
+        │   │   ├── src
+        │   │   └── target
+        │   └── pom.xml
+        ├── libs // 编译好可直接使用的动态库文件
+        └── models // 模型文件
 # 只使用动态库
 
 只使用动态库不编译cpp代码。参考java程序以及libs文件夹，将libs文件夹按照下方《将动态库添加到ld可链接的地方》即可正常使用该动态库。
